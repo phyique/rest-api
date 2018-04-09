@@ -23,6 +23,7 @@ app.use('/', storeRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res) {
+    res.status(404);
     res.json(createError(404))
 });
 
