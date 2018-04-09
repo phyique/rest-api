@@ -11,7 +11,8 @@ router.get('/store/:item', (req, res) => Promise.try(() => mergeRequests())
     .tap(result => {
         if (!result) throw {message: `${req.params.item} - not found`};
         return res.json(result);
-    }).catch(err => res.json(err)));
+    })
+    .catch(err => res.json(err)));
 
 function wrappedRequest(url) {
     return request({
